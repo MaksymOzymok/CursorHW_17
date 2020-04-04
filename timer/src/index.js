@@ -10,7 +10,7 @@ export default class Counter extends Component {
         isRunning: this.props.isRunning,
         end : false,
         length : 100,
-        stepLength : 100 / (this.props.minutes * 60 + this.props.seconds)
+        stepLength : (105 / (this.props.minutes * 60 + this.props.seconds)).toFixed(1)
     };
 
 
@@ -21,6 +21,7 @@ export default class Counter extends Component {
                 this.tick();
                 if(this.state.isRunning) {
                     this.onChangeLength();
+                    console.log(this.state.length)
                 }
                 //console.log(this.state);
             },
@@ -32,6 +33,7 @@ export default class Counter extends Component {
 
     componentWillUnmount() {
         console.log("end");
+        this.setState({length:0});
         clearInterval(this.timerID)
     }
 
