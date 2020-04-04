@@ -1,0 +1,14 @@
+.timer{
+    font-size: 20px;
+    font-family: "Roboto Light";
+    text-align: center;
+}
+.timer-line{
+    margin-top: 50px;
+    height: 3rem;
+    width: 100%;
+    background-color: greenyellow;
+}
+.timer-line .width{
+
+}
