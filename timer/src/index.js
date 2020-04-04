@@ -10,7 +10,7 @@ export default class Counter extends Component {
         isRunning: this.props.isRunning,
         end : false,
         length : 100,
-        stepLength : (105 / (this.props.minutes * 60 + this.props.seconds)).toFixed(1)
+        stepLength : 100 / (this.props.minutes * 60 + this.props.seconds)
     };
 
 
@@ -102,5 +102,15 @@ const a = {
     seconds : 11,
     isRunning: true
 };
+const b = {
+    step : 2000,
+    minutes: 3,
+    seconds : 50,
+    isRunning: true
+};
 
-ReactDOM.render(<Counter {...a}/>, document.getElementById('root'));
+ReactDOM.render(
+    <div>
+    <Counter {...a}/>
+        <Counter {...b}/>
+        </div>, document.getElementById('root'));
